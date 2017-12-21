@@ -23,6 +23,7 @@ const client = new Client({
   port: 5432
 })
 
+require("./routes/index.js")(app)
 require("./routes/search.js")(app, client)
 
 client.connect((err) => console.log(err))
