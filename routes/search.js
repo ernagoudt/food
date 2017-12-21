@@ -24,3 +24,8 @@ module.exports = (app, client) => {
   })
 }
 
+
+res.redirect `/search/${req.body.ingredient}`
+
+
+app.get(`/search/:ingredient` )

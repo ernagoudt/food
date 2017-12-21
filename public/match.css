@@ -1,0 +1,35 @@
+body
+	div.searchbar {
+		text-align: left;
+		position: relative;
+		height: 62px;
+		background-color: #000;
+	}
+
+	div.inform {
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		height: 79px;
+		background-color: #FFB3BA
+	}
+
+	div.inspire {
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		height: 79px;
+		background-color: #F797A0
+	}
+
+	div.recipeMatch {
+		text-align: center;
+		position: relative;
+	}
+	ul.recipeList {
+		position: absolute;
+	}
+	li.recipe_item {
+		position: absolute;
+		margin: 0 auto;
+	}

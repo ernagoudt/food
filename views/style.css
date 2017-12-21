@@ -3,6 +3,14 @@
     font-family: 'Nunito', sans-serif;
   }
 
+/*   .inform {
+  display:none;
+} */
+
+  .inspire {
+    display:none;
+  }
+
   h1 {
     font-size: 40px;
     font-weight: 700;
