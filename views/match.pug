@@ -10,8 +10,8 @@ html
 	body
 		style(type='text/css')
 			include ../public/headers.css
-			//- include ../public/match.css 
-			
+			//- include ../public/match.css
+
 
 		div(class='inform')
 			div
@@ -28,13 +28,13 @@ html
 				h4 #{recipeMatch[0].ingredients}
 
 		div(class='recipeMatch')
-			ul(class='recipeList' style) 
+			ul(class='recipeList' style)
 				each recipe in recipeMatch
-					div.recipe_item 
-						a(href=recipe.href) 
+					div.recipe_item
+						a(href=recipe.href)
 							img(class="recipeImage" src=recipe.thumbnail)
 						li #{recipe.title}
-				
+
 	style.
 		body
 			* {
@@ -61,7 +61,7 @@ html
 				background-color: #FFF;
 			}
 			div.searchbar input {
-				width: 100%;			
+				width: 100%;
 				height: 62px;
 				padding-left: 3%;
 			}

@@ -13,16 +13,10 @@ html
         h1 What is your Foodprint?
         p We inform you and inspire your consumer choices.
 
-    a(href="http://localhost:3000" id="inform")
-      div Inform
-
-    div(class="search")
+    form(class="search" action="/search" method="post")
       input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
       datalist#ingredients
       input(type="submit" id="send" value="")
-
-    a(href="http://localhost:3000" id="inspire")
-      div Inspire
 
     div(class="container")
       img(src="images/logo2.png")
@@ -39,14 +33,6 @@ html
           }
         })
       })
-      $("#send").click(function(){
-        let searchCrit = $("#autocomplete").val()
-        $("#inform").attr("href", "localhost:3000/search?searchCrit=" + searchCrit)
-        $("#inspire").attr("href", "localhost:3000/match?searchCrit=" + searchCrit)
-        $.post()
-        //- ajax dingen als goed is, dan verandert de achtergrondkleur.
-      })
-
     })
 
 

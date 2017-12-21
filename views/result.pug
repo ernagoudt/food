@@ -8,8 +8,6 @@ html
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 
   body
-    div(class="container")
-
     div
       -for (var i = 0; i < ingredients.length; i++)
         div
@@ -19,5 +17,23 @@ html
             li #{ingredients[i].category}
             li #{ingredients[i].kilometers}
 
+    form(class="search" action="/search" method="post")
+      input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
+      datalist#ingredients
+      input(type="submit" id="send" value="")
+
+    a(href="http://localhost:3000" id="inspire")
+      div Inspire
 
     div(class="container")
+
+  script.
+    $(document).ready(function(){
+      $("#send").click(function(){
+        let searchCrit = $("#autocomplete").val()
+        $("#inform").attr("href", "localhost:3000/search?searchCrit=" + searchCrit)
+        $("#inspire").attr("href", "localhost:3000/match?searchCrit=" + searchCrit)
+        $.post()
+        //- ajax dingen als goed is, dan verandert de achtergrondkleur.
+      })
+    })
