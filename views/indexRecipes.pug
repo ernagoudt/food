@@ -1,0 +1,45 @@
+html
+	head
+		meta(charset="utf-8")
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous")
+		style
+			link(href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet")
+
+
+	body
+		style(type='text/css')
+			include ../public/headers.css
+
+		div(class="searchbar")
+			form(class='form-group' id='match' method='POST' action='/match')
+				input(type="text" id='autocomplete' name="autocomplete" datalist='recipes' placeholder="e.g. Avocado")
+
+		div(class="inspire")
+			h4 Get sustainable
+			h2 Inspire
+
+	
+		script.
+
+			$(document).ready(function() { 
+				var lastCall = Date.now()
+				$("#autocomplete").keyup(function() {
+					console.log("hi")
+					if (Date.now() - 300 < lastCall ) {
+						lastCall = Date.now();
+						console.log("blocked")						
+					}
+					lastCall = Date.now()
+					let searchInput = $("#autocomplete").val().toLowerCase()
+					let searchField = {autocomplete: searchInput} 
+					console.log(searchField)
+					$.post("/", searchField, function(data) {
+						$('#results').empty();
+							for(var i = 0; i<data.recipeMatch.length; i++) {
+							console.log(data.recipeMatch)
+							}
+					})
+				})
+			})
