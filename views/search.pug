@@ -1,10 +1,38 @@
 html
   head
     title FOOD
-  body
+    style
+      include style.css
+    link(href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet")
+    script(src="https://use.fontawesome.com/937272718b.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 
-  div
-    h1 Search for ingredients
-    form(method="post" action="/search")
-      input(type="text" name="search" placeholder="enter ingredient")
-      input(type="submit" value="search")
+  body
+    div(class="container")
+      div(class="text-box")
+        h1 What is your Foodprint?
+        p We inform you and inspire your consumer choices.
+
+    div(class="search")
+      form(method="post" action="/search" autocomplete="off")
+        input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
+        datalist#ingredients
+        input(type="submit" value="")
+
+    div(class="container")
+      img(src="images/logo2.png")
+
+  script.
+    $(document).ready(function(){
+      $("input[type=text]").keyup(function(){
+      var input = $(this).val()
+        $.post("/search", {search: input, ajax: true}, (result) => {
+          console.log("the result", result)
+          //- $("#ingredients").remove()
+          for(var i = 0; i < result.ingredients.length; i++){
+            $("#ingredients").append("<option>" + result.ingredients[i].ingredient + "</option>")
+          }
+        })
+      })
+    })
+
