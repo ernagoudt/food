@@ -1,14 +1,23 @@
 html
   head
     title FOOD
-  body
+    style
+      include style.css
+    link(href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet")
+    script(src="https://use.fontawesome.com/937272718b.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 
-  div
-    h1 Result
-    -for (var i = 0; i < ingredients.length; i++)
-      div
-        ul
-          li #{ingredients[i].ingredient}
-          li #{ingredients[i].co2}
-          li #{ingredients[i].category}
-          li #{ingredients[i].kilometers}
+  body
+    div(class="container")
+
+    div
+      -for (var i = 0; i < ingredients.length; i++)
+        div
+          ul
+            li #{ingredients[i].ingredient}
+            li #{ingredients[i].co2}
+            li #{ingredients[i].category}
+            li #{ingredients[i].kilometers}
+
+
+    div(class="container")

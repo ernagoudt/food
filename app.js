@@ -5,6 +5,7 @@ const pg = require("pg")
 const Client = pg.Client
 const bodyParser = require("body-parser")
 
+app.use(express.static("public"))
 app.use (bodyParser.urlencoded({extended:true}))
 app.set ('view engine', 'pug')
 
