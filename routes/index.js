@@ -7,7 +7,8 @@ module.exports = (app, client) => {
 
   const query ={
     text: `Select * from ingredients
-    WHERE ingredients.ingredient LIKE '%${req.body.search}%'`
+    WHERE ingredients.ingredient LIKE '%${req.body.search}%'
+    ORDER BY ingredients.co2 ASC`
   }
 
   client.query(query, (err, result) => {

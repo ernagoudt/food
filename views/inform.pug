@@ -32,16 +32,18 @@ html
           img.category2(src="images/icons/road-2.png")
           img.category3(src="images/icons/road-3.png")
           img.category4(src="images/icons/road-4.png")
+        p
 
-    div.inform
-      h2 INFORM
-    form(class="search" action="/search" method="post")
-      input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
-      datalist#ingredients
-      input(type="submit" id="send" value="")
-      a(href="http://localhost:3000" id="inspire")
-        div.inspire
-          h2 INSPIRE
+    div.footer
+      div.inform
+        h2 INFORM
+      form(class="search" action="/search" method="post")
+        input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
+        datalist#ingredients
+        input(type="submit" id="send" value="")
+        a(href="http://localhost:3000" id="inspire")
+          div.inspire
+            h2 INSPIRE
 
   script.
     $(document).ready(function(){
