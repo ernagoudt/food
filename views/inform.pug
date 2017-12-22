@@ -9,33 +9,68 @@ html
       include ../public/headers.css
       include ../public/match.css
       include ../public/style.css
+      include ../public/colors.css
 
   body
-    div.inspire
-      h2 INFORM
-
     div
       -for (var i = 0; i < ingredients.length; i++)
-        div
-          ul
-            li(data-key=`${ingredients[i].ingredient}` id="ingredientKey") #{ingredients[i].ingredient}
-            li #{ingredients[i].co2}
-            li #{ingredients[i].category}
-            li #{ingredients[i].kilometers}
+        div.title
+          p.title(data-key=`${ingredients[i].ingredient}` id="ingredientKey") #{ingredients[i].ingredient}
+        div.co2
+          p Average CO2 emission
+          p.inline #{ingredients[i].co2}
+          p.hide(data-key=`${ingredients[i].category}` id="ingredientCat") #{ingredients[i].category}
+          img.category1(src="images/icons/green-1.png")
+          img.category2(src="images/icons/yellow-2.png")
+          img.category3(src="images/icons/orange-3.png")
+          img.category4(src="images/icons/red-4.png")
 
+        div.road
+          p Average driving equivalent
+          p.inline(data-key=`${ingredients[i].kilometers}` id="ingredientKm") #{ingredients[i].kilometers} km
+          img.category1(src="images/icons/road-1.png")
+          img.category2(src="images/icons/road-2.png")
+          img.category3(src="images/icons/road-3.png")
+          img.category4(src="images/icons/road-4.png")
+
+    div.inform
+      h2 INFORM
     form(class="search" action="/search" method="post")
       input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
       datalist#ingredients
       input(type="submit" id="send" value="")
-
-    a(href="http://localhost:3000" id="inspire")
-      div.inspire
-        h2 INSPIRE
+      a(href="http://localhost:3000" id="inspire")
+        div.inspire
+          h2 INSPIRE
 
   script.
     $(document).ready(function(){
       let searchCrit = document.getElementById("ingredientKey").dataset.key
-      console.log(searchCrit)
       $("#inspire").attr("href", "http://localhost:3000/match?searchCrit=" + searchCrit)
-      $.post()
+      let category = document.getElementById("ingredientCat").dataset.key
+      console.log(category)
+      if(category == 1){
+        $('.category1').removeClass()
+        $('.title').addClass('color-green')
+        $('.inform').addClass('color-green')
+        $('.inspire').addClass('color-green')
+      }
+      else if(category == 2){
+        $('.category2').removeClass()
+        $('.title').addClass('color-yellow')
+        $('.inform').addClass('color-yellow')
+        $('.inspire').addClass('color-yellow')
+      }
+      else if(category == 3){
+        $('.category3').removeClass()
+        $('.title').addClass('color-orange')
+        $('.inform').addClass('color-orange')
+        $('.inspire').addClass('color-orange')
+      }
+      else if (category == 4){
+        $('.category4').removeClass()
+        $('.title').addClass('color-red')
+        $('.inform').addClass('color-red')
+        $('.inspire').addClass('color-red')
+      }
     })

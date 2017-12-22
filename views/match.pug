@@ -9,20 +9,21 @@ html
 			include ../public/headers.css
 			include ../public/match.css
 			include ../public/style.css
+			include ../public/colors.css
 
 	body
 		div
 			a(href='javascript:history.back()')
-				div.inspire
+				div.informRecipes
 					h2 INFORM
 
-			form(class="search" action="/search" method="post")
-				input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
-				datalist#ingredients
-				input(type="submit" id="send" value="")
+		form(class="search" action="/search" method="post")
+			input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
+			datalist#ingredients
+			input(type="submit" id="send" value="")
 
-			div.inspire
-				h2 Inspire
+			div.inspireRecipes
+				h2 INSPIRE
 
 
 		div(class='recipeMatch')
@@ -32,3 +33,24 @@ html
 						a(href=recipe.href)
 							img(class="recipeImage" src=recipe.thumbnail)
 						li #{recipe.title}
+
+//- script.
+//- 	$(document).ready(function(){
+//- 		let category = document.getElementById("ingredientCat").dataset.key
+//- 		if(category == 1){
+//- 			$('.inform').addClass('color-green')
+//- 			$('.inspire').addClass('color-green')
+//- 		}
+//- 		else if(category == 2){
+//- 			$('.inform').addClass('color-yellow')
+//- 			$('.inspire').addClass('color-yellow')
+//- 		}
+//- 		else if(category == 3){
+//- 			$('.inform').addClass('color-orange')
+//- 			$('.inspire').addClass('color-orange')
+//- 		}
+//- 		else if (category == 4){
+//- 			$('.inform').addClass('color-red')
+//- 			$('.inspire').addClass('color-red')
+//- 		}
+//- 	})

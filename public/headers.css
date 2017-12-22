@@ -37,6 +37,14 @@ p.textSuggestion {
 	color: #000;
 }
 
+p.title {
+	font-weight: 900;
+	font-family: Nunito;
+	font-size: 15px;
+	color: #FFF;
+}
+
+
 p {
 	font-weight: 900;
 	font-family: Nunito;

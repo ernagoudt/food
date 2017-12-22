@@ -1,0 +1,79 @@
+style
+	.color-default {
+		background-color: white;
+	}
+
+	.color-green {
+		background-color: #B9F683;
+	}
+
+	.color-yellow {
+		background-color: #F6F67F;
+	}
+
+	.color-orange {
+		background-color: #FFCC91;
+	}
+
+	.color-red {
+		background-color: #F797A0;
+	}
+
+	.title {
+		text-align: center;
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		height: 25px;
+	}
+
+	.inform {
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		height: 79px;
+	}
+
+	.inspire {
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		height: 79px;
+	}
+
+	.category1 {
+		display: none;
+	}
+	.category2 {
+		display: none;
+	}
+	.category3 {
+		display: none;
+	}
+	.category4 {
+		display: none;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	img {
+		width: 200px;
+		height: auto;
+		vertical-align: middle;
+	}
+
+	.co2 {
+		text-align: center;
+	}
+
+	.road {
+		text-align: center;
+	}
+
+	p.inline {
+		display: inline-block;
+	}
