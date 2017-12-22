@@ -1,20 +1,26 @@
 html
   head
-    title FOOD
-    style
-      include style.css
+    title FOODCO2
+    meta(charset="utf-8")
     link(href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet")
     script(src="https://use.fontawesome.com/937272718b.js")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    style(type='text/css')
+      include ../public/headers.css
+      include ../public/match.css
+      include ../public/style.css
 
   body
     div(class="container")
       div(class="text-box")
         h1 What is your Foodprint?
-        p We inform you and inspire your consumer choices.
+        p
+          | We inform you and inspire
+          br
+          |  your consumer choices.
 
     form(class="search" action="/search" method="post")
-      input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
+      input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat" autcomplete ="off")
       datalist#ingredients
       input(type="submit" id="send" value="")
 

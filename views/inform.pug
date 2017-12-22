@@ -1,18 +1,24 @@
 html
   head
-    title FOOD
-    style
-      include style.css
+    title INFORM
+    meta(charset="utf-8")
     link(href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet")
     script(src="https://use.fontawesome.com/937272718b.js")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    style(type='text/css')
+      include ../public/headers.css
+      include ../public/match.css
+      include ../public/style.css
 
   body
+    div.inspire
+      h2 INFORM
+
     div
       -for (var i = 0; i < ingredients.length; i++)
         div
           ul
-            li #{ingredients[i].ingredient}
+            li(data-key=`${ingredients[i].ingredient}` id="ingredientKey") #{ingredients[i].ingredient}
             li #{ingredients[i].co2}
             li #{ingredients[i].category}
             li #{ingredients[i].kilometers}
@@ -23,17 +29,13 @@ html
       input(type="submit" id="send" value="")
 
     a(href="http://localhost:3000" id="inspire")
-      div Inspire
-
-    div(class="container")
+      div.inspire
+        h2 INSPIRE
 
   script.
     $(document).ready(function(){
-      $("#send").click(function(){
-        let searchCrit = $("#autocomplete").val()
-        $("#inform").attr("href", "localhost:3000/search?searchCrit=" + searchCrit)
-        $("#inspire").attr("href", "localhost:3000/match?searchCrit=" + searchCrit)
-        $.post()
-        //- ajax dingen als goed is, dan verandert de achtergrondkleur.
-      })
+      let searchCrit = document.getElementById("ingredientKey").dataset.key
+      console.log(searchCrit)
+      $("#inspire").attr("href", "http://localhost:3000/match?searchCrit=" + searchCrit)
+      $.post()
     })
