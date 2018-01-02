@@ -4,12 +4,13 @@ var session = require('express-session');
 const pg = require("pg")
 const Client = pg.Client
 const bodyParser = require("body-parser")
+var cookieparser = require('cookie-parser')
 
+app.use (cookieparser());
 app.use(express.static("public"))
 app.use (bodyParser.urlencoded({extended:true}))
 app.set ('view engine', 'pug')
 require('dotenv').load();
-// const env = require("./env.json")
 app.use (session({
   secret: '23j354jl45j',
   resave: true,
