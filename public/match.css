@@ -1,35 +1,64 @@
-body
-	div.searchbar {
-		text-align: left;
-		position: relative;
-		height: 62px;
-		background-color: #000;
+style
+	body {
+			margin: 0;
+			padding: 0;
 	}
-
-	div.inform {
-		text-align: center;
-		position: relative;
-		margin: 0 auto;
-		height: 79px;
-		background-color: #FFB3BA
+	h2 {
+		font-weight: 200;
+		font-family: Nunito;
+		font-size: 45px;
+		text-transform: uppercase;
+		color: #FFF;
 	}
-
-	div.inspire {
-		text-align: center;
-		position: relative;
-		margin: 0 auto;
-		height: 79px;
-		background-color: #F797A0
+	h4 {
+		font-weight: 600;
+		font-family: Nunito;
+		font-size: 20px;
+		color: #FFF;
 	}
-
 	div.recipeMatch {
 		text-align: center;
 		position: relative;
+		padding: 3%;
 	}
 	ul.recipeList {
-		position: absolute;
+		position: relative;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 	}
-	li.recipe_item {
-		position: absolute;
+	div.recipe_item {
+		text-align: center;
+		position: relative;
 		margin: 0 auto;
+		display: block;
+		vertical-align: center;
+		padding: 1%;
+	}
+	div.recipe_item li{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	img.recipeImage {
+		border-radius: 47%;
+		border: solid 3px #B9F683;
+		width: 80px;
+		height: 80px;
+	}
+
+	.informRecipes {
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		height: 79px;
+		background-color: #B9F683;
+	}
+
+	.inspireRecipes {
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		height: 79px;
+ 		background-color: #B9F683;
 	}

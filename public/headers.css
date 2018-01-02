@@ -1,72 +1,57 @@
-body
-	h1 {
-		font-weight: 700;
-		font-family: Nunito;
-		font-size: 40px;
-		color: #000;		
-	}
-	h2 {
+h1 {
+	font-weight: 700;
+	font-family: Nunito;
+	font-size: 40px;
+	color: #000;
+}
+h2 {
+	margin-top: 0;
+	font-weight: 200;
+	font-family: Nunito;
+	font-size: 45px;
+	text-transform: uppercase;
+	color: #FFF;
+}
+h3 {
+	font-weight: 700;
+	font-family: Nunito;
+	font-size: 15px;
+	color: #000;
+}
+p.textGeneralSubheader {
+	font-weight: 500;
+	font-family: Nunito;
+	font-size: 15px;
+	color: #000;
+}
+p.textSearch {
+	font-weight: 500;
+	font-family: Nunito;
+	font-size: 15px;
+	color: #000;
+}
+p.textSuggestion {
+	font-weight: 900;
+	font-family: Nunito;
+	font-size: 15px;
+	color: #000;
+}
 
-		font-weight: 200;
-		font-family: Nunito;
-		font-size: 45px;
-		text-transform: uppercase;
-		color: #FFF;
-	}
-	h3 {
-		font-weight: 700;
-		font-family: Nunito;
-		font-size: 15px;
-		color: #000;
-	}
-	p.textGeneralSubheader {
-		font-weight: 500;
-		font-family: Nunito;
-		font-size: 15px;
-		color: #000;
-	}
-	p.textSearch {
-		font-weight: 500;
-		font-family: Nunito;
-		font-size: 15px;
-		color: #000;
-	}
-	p.textSuggestion {
-		font-weight: 900;
-		font-family: Nunito;
-		font-size: 15px;
-		color: #000;
-	}
-	
-	/*green
-	#inform {
-		background-color: #CBFF9C;
-	}
-	#inspire {
-		background-color: #B9F683;
-	}
-	yellow
-	#inform {
-		background-color: #F9F9A4;
-	}
-	#inspire {
-		background-color: #F6F67F;
-	}
+p.title {
+	font-weight: 900;
+	font-family: Nunito;
+	font-size: 15px;
+	color: #FFF;
+}
 
-	orange
-	#inform {
-		background-color: #FFDFBA;
-	}
-	#inspire {
-		background-color: #FFCC91;
-	}
 
-	red
-	#inform {
-		background-color: #FFB3BA;
-	}
-	#inspire {
-		background-color: #F797A0;
-	}
-*/
+p {
+	font-weight: 900;
+	font-family: Nunito;
+	font-size: 15px;
+	color: #000;
+}
 
+a:link {
+    text-decoration: none;
+}

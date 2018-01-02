@@ -1,42 +1,26 @@
-var Promise = require('bluebird');
-const fs = Promise.promisifyAll(require('fs'));
+module.exports = (app, client) => {
+  app.get("/", (req, res) => {
+    res.render ("search")
+  }),
 
-module.exports = (theApp) => {
-	theApp.get("/indexRecipes", (req, res) => {
-		res.render("indexRecipes", {
-			title: "indexRecipes",
-		})
-	})
+  app.post("/search", (req, res) => {
 
-	theApp.post("/match", (req, res) => {
+  const query ={
+    text: `Select * from ingredients
+    WHERE ingredients.ingredient LIKE '%${req.body.search}%'
+    ORDER BY ingredients.co2 ASC`
+  }
 
-
-		fs.readFileAsync('foodrecipes.json', 'utf-8')
-		.then(data => {
-			data = data.replace(/\n/g, "\\n")
-			data = JSON.parse(data)
-			let recipeMatch = []
-			for(i=0; i < data.length; i++) {
-				for(j=0; j < data[i].results.length; j++) {
-					if(data[i].results[j].ingredients.toLowerCase().startsWith(req.body.autocomplete)) {
-						recipeMatch.push(data[i].results[j])
-					}
-				}
-			}
-			return recipeMatch
-		}).then((recipeMatch) => {
-				if (recipeMatch.length === 0) {
-					res.send("Match not found, try again!")
-				}
-				else if (recipeMatch.length > 0) {
-					res.render('match', {
-						title: 'match',
-						recipeMatch: recipeMatch
-					})
-				}
-		})
-	})
+  client.query(query, (err, result) => {
+    if (err) throw err
+    var ingredients = result.rows
+    if(req.body.ajax == "true") {
+      if(result.rows.length === 0) res.send({ingredients: ingredients})
+      else res.send({ingredients: ingredients})
+    }
+    else {
+      res.render("inform", {ingredients: ingredients})
+    }
+  })
+  })
 }
-
-
-
