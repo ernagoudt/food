@@ -13,18 +13,19 @@ html
 			include ../public/colors.css
 
 	body
-		div
-			a(href='javascript:history.back()')
-				div.informRecipes
-					h2 INFORM
+		div.fixed
+			div.search
+				a(href='javascript:history.back()')
+					div.informRecipes
+						h2.inspire INFORM
 
-		form(class="search" action="/search" method="post")
-			input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
-			datalist#ingredients
-			input(type="submit" id="send" value="")
+			form(class="search" action="/search" method="post")
+				input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
+				datalist#ingredients
+				input(type="submit" id="send" value="")
 
-			div.inspireRecipes
-				h2 INSPIRE
+				div.inspireRecipes
+					h2.inspire INSPIRE
 
 
 		div(class='recipeMatch')
