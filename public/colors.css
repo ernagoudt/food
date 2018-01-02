@@ -96,7 +96,7 @@ style
 		div.imageBubble img {
 			text-align: center;
 			height: 300px;
-    		width: 70%;
+    		width: 100%;
     		margin: 0 auto;
 		}
 		div.footer {		
@@ -105,7 +105,9 @@ style
 			bottom:0px;
 			width: 100%;
 			z-index: 10000;
-			margin-top: 30%;
+		}
+		input#send {
+			box-shadow: 0px 2px 6px 2px #ccc;
 		}
 
 		/* Small devices (phones, tablets, 768px and up) */
@@ -128,9 +130,12 @@ style
 
 		/* Medium devices and large devices (desktops, 992px and up) */ 
 		@media screen and (min-width:901px) {
+			div.dummy {
+				height: 25%;
+			}
 			div.info {
 				display: inline-block;
-				padding: 5%;
+				padding-left: 15%;
 				width: 70%;
 				margin: 0 auto;
 				text-align: center;
