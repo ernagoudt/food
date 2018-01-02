@@ -8,16 +8,16 @@ const bodyParser = require("body-parser")
 app.use(express.static("public"))
 app.use (bodyParser.urlencoded({extended:true}))
 app.set ('view engine', 'pug')
-
+require('dotenv').load();
+// const env = require("./env.json")
 app.use (session({
   secret: '23j354jl45j',
   resave: true,
   saveUnininitialized: true
 }))
-
-require('dotenv').load();
+debugger
 const client = new Client({
-  user: process.env.username,
+  user: process.env.databaseUser,
   host: process.env.host,
   database: process.env.database,
   password: process.env.password,
