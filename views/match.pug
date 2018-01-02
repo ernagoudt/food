@@ -2,6 +2,7 @@ html
 	head
 		title INSPIRE
 		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
 		link(href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet")
 		script(src="https://code.jquery.com/jquery-3.2.1.min.js")
 		script(src="https://use.fontawesome.com/937272718b.js")
@@ -34,23 +35,26 @@ html
 							img(class="recipeImage" src=recipe.thumbnail)
 						li #{recipe.title}
 
-//- script.
-//- 	$(document).ready(function(){
-//- 		let category = document.getElementById("ingredientCat").dataset.key
-//- 		if(category == 1){
-//- 			$('.inform').addClass('color-green')
-//- 			$('.inspire').addClass('color-green')
-//- 		}
-//- 		else if(category == 2){
-//- 			$('.inform').addClass('color-yellow')
-//- 			$('.inspire').addClass('color-yellow')
-//- 		}
-//- 		else if(category == 3){
-//- 			$('.inform').addClass('color-orange')
-//- 			$('.inspire').addClass('color-orange')
-//- 		}
-//- 		else if (category == 4){
-//- 			$('.inform').addClass('color-red')
-//- 			$('.inspire').addClass('color-red')
-//- 		}
-//- 	})
+	script.
+		$(document).ready(function(){
+			let searchCrit = document.getElementById("ingredientKey").dataset.key
+			$("#inspire").attr("href", "http://localhost:3000/match?searchCrit=" + searchCrit)
+			let category = document.getElementById("ingredientCat").dataset.key
+			console.log(category)
+			if(category == 1){
+				$('.inform').addClass('color-green')
+				$('.inspire').addClass('color-green')
+			}
+			else if(category == 2){
+				$('.inform').addClass('color-yellow')
+				$('.inspire').addClass('color-yellow')
+			}
+			else if(category == 3){
+				$('.inform').addClass('color-orange')
+				$('.inspire').addClass('color-orange')
+			}
+			else if (category == 4){
+				$('.inform').addClass('color-red')
+				$('.inspire').addClass('color-red')
+			}
+		})
