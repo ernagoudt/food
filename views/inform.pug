@@ -32,6 +32,20 @@ html
 					img.category3(src="images/icons/orange-3.png")
 					img.category4(src="images/icons/red-4.png")
 
+  body
+    div
+      -for (var i = 0; i < ingredients.length; i++)
+        div.title
+          p.title(data-key=`${ingredients[i].ingredient}` id="ingredientKey") #{ingredients[i].ingredient}
+        div.co2
+          p Average CO2 emission per kg #{ingredients[i].ingredient}
+          p.inline #{ingredients[i].co2}
+          p.hide(data-key=`${ingredients[i].category}` id="ingredientCat") #{ingredients[i].category} kg
+          img.category1(src="images/icons/green-1.png")
+          img.category2(src="images/icons/yellow-2.png")
+          img.category3(src="images/icons/orange-3.png")
+          img.category4(src="images/icons/red-4.png")
+
 				div.road
 					p Average driving equivalent
 					p.inline(data-key=`${ingredients[i].kilometers}` id="ingredientKm") #{ingredients[i].kilometers} km
@@ -50,14 +64,14 @@ html
 				input(type="text" name="search" id="autocomplete" list="ingredients", placeholder="Eg. avocado or meat")
 				datalist#ingredients
 				input(type="submit" id="send" value="")
-				a(href="http://localhost:3000" id="inspire")
+				a(href="http://95.85.60.195/" id="inspire")
 					div.inspire
 						h2 INSPIRE
 
 	script.
 		$(document).ready(function(){
 			let searchCrit = document.getElementById("ingredientKey").dataset.key
-			$("#inspire").attr("href", "http://localhost:3000/match?searchCrit=" + searchCrit)
+			$("#inspire").attr("href", "http://95.85.60.195/match?searchCrit=" + searchCrit)
 			let category = document.getElementById("ingredientCat").dataset.key
 			console.log(category)
 			if(category == 1){
@@ -89,3 +103,36 @@ html
 				$('.inspire').addClass('color-red')
 			}
 		})
+
+  script.
+    $(document).ready(function(){
+      let searchCrit = document.getElementById("ingredientKey").dataset.key
+      $("#inspire").attr("href", "http://95.85.60.195/match?searchCrit=" + searchCrit)
+      let category = document.getElementById("ingredientCat").dataset.key
+      console.log(category)
+      if(category == 1){
+        $('.category1').removeClass()
+        $('.title').addClass('color-green')
+        $('.inform').addClass('color-green')
+        $('.inspire').addClass('color-green')
+      }
+      else if(category == 2){
+        $('.category2').removeClass()
+        $('.title').addClass('color-yellow')
+        $('.inform').addClass('color-yellow')
+        $('.inspire').addClass('color-yellow')
+      }
+      else if(category == 3){
+        $('.category3').removeClass()
+        $('.title').addClass('color-orange')
+        $('.inform').addClass('color-orange')
+        $('.inspire').addClass('color-orange')
+      }
+      else if (category == 4){
+        $('.category4').removeClass()
+        $('.title').addClass('color-red')
+        $('.inform').addClass('color-red')
+        $('.inspire').addClass('color-red')
+      }
+    })
+>>>>>>> 28c8f4483d0690c037fcf60ab1888f90df1e9927
