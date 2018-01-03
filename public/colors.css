@@ -95,7 +95,6 @@ style
 		}
 		div.imageBubble img {
 			text-align: center;
-			height: 300px;
     		width: 100%;
     		margin: 0 auto;
 		}
@@ -131,7 +130,7 @@ style
 		/* Medium devices and large devices (desktops, 992px and up) */ 
 		@media screen and (min-width:901px) {
 			div.dummy {
-				height: 25%;
+				height: 35%;
 			}
 			div.info {
 				display: inline-block;
@@ -142,9 +141,9 @@ style
 				z-index: 10000;
 			}
 			.co2, .road {
-				padding: 30px;
+				padding: 20px;
 				width: 20%;
-				margin: 8%;
+				margin: 2%;
 				display: inline-block;
 			}
 			p.inline {
