@@ -14,15 +14,16 @@ html
 
 	body
 		div.imageBubble
-      img.bubble1(src="images/bubbles/green-1.png")
-      img.bubble2(src="images/bubbles/yellow-2.png")
-      img.bubble3(src="images/bubbles/orange-3.png")
-      img.bubble4(src="images/bubbles/red-4.png")
+			img.bubble1(src="images/bubbles/green-1.jpg")
+			img.bubble2(src="images/bubbles/yellow-2.jpg")
+			img.bubble3(src="images/bubbles/orange-3.jpg")
+			img.bubble4(src="images/bubbles/red-4.jpg")
 		div.info
 			-for (var i = 0; i < ingredients.length; i++)
 				div.title
 					p.title(data-key=`${ingredients[i].ingredient}` id="ingredientKey") #{ingredients[i].ingredient}
 				div.co2
+					br
 					p Average CO2 emission per kg #{ingredients[i].ingredient}
 					p.inline #{ingredients[i].co2} kg
 					p.hide(data-key=`${ingredients[i].category}` id="ingredientCat") #{ingredients[i].category}
@@ -39,6 +40,8 @@ html
 					img.category3(src="images/icons/road-3.png")
 					img.category4(src="images/icons/road-4.png")
 				p
+		div.dummy
+			p
 
 		div.footer
 			div.inform
@@ -55,34 +58,34 @@ html
 		$(document).ready(function(){
 			let searchCrit = document.getElementById("ingredientKey").dataset.key
 			$("#inspire").attr("href", "http://95.85.60.195/match?searchCrit=" + searchCrit)
-      let category = document.getElementById("ingredientCat").dataset.key
-      console.log(category)
-      if(category == 1){
-        $('.bubble1').removeClass()
-        $('.category1').removeClass()
-        $('.title').addClass('color-green')
-        $('.inform').addClass('color-green')
-        $('.inspire').addClass('color-green')
-      }
-      else if(category == 2){
-        $('.bubble2').removeClass()
-        $('.category2').removeClass()
-        $('.title').addClass('color-yellow')
-        $('.inform').addClass('color-yellow')
-        $('.inspire').addClass('color-yellow')
-      }
-      else if(category == 3){
-        $('.bubble3').removeClass()
-        $('.category3').removeClass()
-        $('.title').addClass('color-orange')
-        $('.inform').addClass('color-orange')
-        $('.inspire').addClass('color-orange')
-      }
-      else if (category == 4){
-        $('.bubble4').removeClass()
-        $('.category4').removeClass()
-        $('.title').addClass('color-red')
-        $('.inform').addClass('color-red')
-        $('.inspire').addClass('color-red')
-      }
-    })
+			let category = document.getElementById("ingredientCat").dataset.key
+			console.log(category)
+			if(category == 1){
+				$('.bubble1').removeClass()
+				$('.category1').removeClass()
+				$('.title').addClass('color-green')
+				$('.inform').addClass('color-green')
+				$('.inspire').addClass('color-green')
+			}
+			else if(category == 2){
+				$('.bubble2').removeClass()
+				$('.category2').removeClass()
+				$('.title').addClass('color-yellow')
+				$('.inform').addClass('color-yellow')
+				$('.inspire').addClass('color-yellow')
+			}
+			else if(category == 3){
+				$('.bubble3').removeClass()
+				$('.category3').removeClass()
+				$('.title').addClass('color-orange')
+				$('.inform').addClass('color-orange')
+				$('.inspire').addClass('color-orange')
+			}
+			else if (category == 4){
+				$('.bubble4').removeClass()
+				$('.category4').removeClass()
+				$('.title').addClass('color-red')
+				$('.inform').addClass('color-red')
+				$('.inspire').addClass('color-red')
+			}
+		})
